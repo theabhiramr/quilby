@@ -3,6 +3,16 @@ import 'package:picons/picons.dart';
 
 import 'package:quilby/theme/colors.dart';
 
+const double _outerMargin = 16;
+const double _barHeight = 64;
+const double _barHorizontalPadding = 20;
+const double _itemSpacing = 14;
+const double _barElevation = 8;
+const double _addButtonSize = 48;
+const double _navItemSize = 44;
+const double _iconSize = 24;
+const double _selectedIndicatorOpacity = 0.25;
+
 class NavBarItem {
   final PiconDuotoneData icon;
   final String label;
@@ -30,30 +40,37 @@ class AppBottomNavBar extends StatelessWidget {
     final int centerIndex = items.length ~/ 2;
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(16, 0, 16, bottomInset + 16),
+      padding: EdgeInsets.fromLTRB(
+        _outerMargin,
+        0,
+        _outerMargin,
+        bottomInset + _outerMargin,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Material(
             color: AppColors.surface,
             shadowColor: AppColors.shadow,
-            elevation: 8,
+            elevation: _barElevation,
             shape: const StadiumBorder(),
             clipBehavior: Clip.antiAlias,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(
+                horizontal: _barHorizontalPadding,
+              ),
               child: SizedBox(
-                height: 64,
+                height: _barHeight,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     for (int i = 0; i < items.length; i++) ...[
                       if (i == centerIndex) ...[
-                        const SizedBox(width: 14),
+                        const SizedBox(width: _itemSpacing),
                         _AddButton(onPressed: onAddPressed),
-                        const SizedBox(width: 14),
+                        const SizedBox(width: _itemSpacing),
                       ] else if (i > 0)
-                        const SizedBox(width: 14),
+                        const SizedBox(width: _itemSpacing),
                       _NavBarTapTarget(
                         item: items[i],
                         selected: i == selectedIndex,
@@ -85,14 +102,18 @@ class _AddButton extends StatelessWidget {
         customBorder: const CircleBorder(),
         onTap: onPressed,
         child: Container(
-          width: 48,
-          height: 48,
+          width: _addButtonSize,
+          height: _addButtonSize,
           alignment: Alignment.center,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: AppColors.primary,
           ),
-          child: Picon(PiconsRegular.plus, color: AppColors.onPrimary, size: 24),
+          child: Picon(
+            PiconsRegular.plus,
+            color: AppColors.onPrimary,
+            size: _iconSize,
+          ),
         ),
       ),
     );
@@ -124,20 +145,22 @@ class _NavBarTapTarget extends StatelessWidget {
         customBorder: const CircleBorder(),
         onTap: onTap,
         child: Container(
-          width: 44,
-          height: 44,
+          width: _navItemSize,
+          height: _navItemSize,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: selected
-                ? AppColors.primaryLight.withValues(alpha: 0.25)
+                ? AppColors.primaryLight.withValues(
+                    alpha: _selectedIndicatorOpacity,
+                  )
                 : Colors.transparent,
           ),
           child: Picon(
             item.icon,
             color: iconColor,
             duoColor: selected ? AppColors.primary : iconColor,
-            size: 24,
+            size: _iconSize,
           ),
         ),
       ),
