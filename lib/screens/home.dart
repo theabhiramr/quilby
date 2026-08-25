@@ -11,7 +11,12 @@ class Home extends StatelessWidget {
       appBar: Header(
         title: "quilby",
         leading: HeaderMenu(),
-        actions: [HeaderNotifications()],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: HeaderNotifications(),
+          ),
+        ],
         backgroundColor: Colors.transparent,
       ),
       body: Center(

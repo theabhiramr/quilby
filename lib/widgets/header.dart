@@ -42,16 +42,16 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.only(bottom: 6),
         child: Text(
           title,
-          style: AppTextStyles.heading1.copyWith(color: titleColor),
+          style: AppTextStyles.title.copyWith(color: titleColor),
         ),
       ),
-      leading: leading,
+      leading: leading == null ? null : Center(child: leading),
       centerTitle: centerTitle,
       backgroundColor: effectiveBackground,
       actions: actions,
       elevation: 0,
-      shape: const Border(
-        bottom: BorderSide(color: AppColors.secondaryLight, width: 1),
+      shape: const RoundedRectangleBorder(
+        side: BorderSide(color: AppColors.shadow, width: 1),
       ),
       // A transparent bar shows the light scaffold background behind it, and an
       // opaque bar here is never dark — so status bar icons should stay dark too.
