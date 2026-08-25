@@ -35,7 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
-  phosphor_flutter: ^2.1.0
+  picons: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -47,16 +47,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
-
-# phosphor_flutter 2.1.0 (pub.dev's latest) still extends IconData, which
-# Flutter 3.44 made a final class, breaking the build. No fix is published
-# yet (https://github.com/phosphor-icons/flutter/issues/64), so this pins to
-# an open community fix branch (PR #66) until an official release lands.
-dependency_overrides:
-  phosphor_flutter:
-    git:
-      url: https://github.com/hiake21c/flutter.git
-      ref: 71f65b6b46ac6493629437d24cf892c0fb9dfe2a
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

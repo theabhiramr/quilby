@@ -38,9 +38,12 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         : AppColors.textPrimary;
 
     return AppBar(
-      title: Text(
-        title,
-        style: AppTextStyles.heading1.copyWith(color: titleColor),
+      title: Padding(
+        padding: const EdgeInsets.only(bottom: 6),
+        child: Text(
+          title,
+          style: AppTextStyles.heading1.copyWith(color: titleColor),
+        ),
       ),
       leading: leading,
       centerTitle: centerTitle,

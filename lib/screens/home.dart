@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:quilby/theme/theme.dart";
 import "package:quilby/widgets/widgets.dart";
 
 class Home extends StatelessWidget {
@@ -7,12 +8,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Header(
+      appBar: Header(
         title: "quilby",
-        actions: [NotificationsAction()],
+        leading: HeaderMenu(),
+        actions: [HeaderNotifications()],
         backgroundColor: Colors.transparent,
       ),
-      body: const Center(child: Text("Welcome to Quilby!")),
+      body: Center(
+        child: Text("Welcome to Quilby!", style: AppTextStyles.body1),
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class AppColors {
 
   // Neutrals — warm off-white paper tones instead of stark white/grey.
   static const Color background = Color(0xFFFDF8F0);
-  static const Color surface = Color(0xFFFFFFFF);
+  static const Color surface = Color(0xFFFFFCF5);
   static const Color onSurfaceMuted = Color(0xFF6F6459);
 
   static const Color textPrimary = Color(0xFF2B2118);
