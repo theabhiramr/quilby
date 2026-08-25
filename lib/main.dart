@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:litnest/theme/app_colors.dart';
-import 'package:litnest/theme/app_text_styles.dart';
+import 'package:quilby/theme/app_colors.dart';
+import 'package:quilby/theme/app_text_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lumora',
+      title: 'Quilby',
       theme: ThemeData(
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: AppColors.background,
       ),
-      home: const MyHomePage(title: 'lumora'),
+      home: const MyHomePage(title: 'quilby'),
     );
   }
 }
