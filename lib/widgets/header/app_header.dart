@@ -10,6 +10,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final bool centerTitle;
   final Color? backgroundColor;
+  final TextStyle? titleStyle;
 
   const Header({
     super.key,
@@ -18,6 +19,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     this.centerTitle = true,
     this.backgroundColor,
+    this.titleStyle,
   });
 
   @override
@@ -42,17 +44,18 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         padding: const EdgeInsets.only(bottom: 6),
         child: Text(
           title,
-          style: AppTextStyles.title.copyWith(color: titleColor),
+          style: (titleStyle ?? AppTextStyles.heading2).copyWith(
+            color: titleColor,
+          ),
         ),
       ),
       leading: leading == null ? null : Center(child: leading),
       centerTitle: centerTitle,
       backgroundColor: effectiveBackground,
       actions: actions,
-      elevation: 0,
-      shape: const RoundedRectangleBorder(
-        side: BorderSide(color: AppColors.shadow, width: 1),
-      ),
+      elevation: 3,
+      scrolledUnderElevation: 3,
+      shadowColor: AppColors.shadow,
       // A transparent bar shows the light scaffold background behind it, and an
       // opaque bar here is never dark — so status bar icons should stay dark too.
       // AppBar's own default estimates brightness from the raw backgroundColor,

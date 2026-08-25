@@ -1,4 +1,4 @@
-package com.example.biblio
+package com.example.quilby
 
 import io.flutter.embedding.android.FlutterActivity
 

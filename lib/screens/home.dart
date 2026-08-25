@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: Header(
         title: "quilby",
+        titleStyle: AppTextStyles.title,
         leading: HeaderMenu(),
         actions: [
           Padding(

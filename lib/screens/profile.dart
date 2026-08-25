@@ -22,9 +22,19 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              user?.email ?? "Not signed in",
-              style: AppTextStyles.body1,
+            Column(
+              children: [
+                QuilbyButton(
+                  text: "Sign in/Sign up",
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/auth");
+                  },
+                ),
+                Text(
+                  user?.email ?? "Not signed in",
+                  style: AppTextStyles.body1,
+                ),
+              ],
             ),
             if (user != null) ...[
               const SizedBox(height: 16),

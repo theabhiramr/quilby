@@ -5,10 +5,16 @@ import "package:flutter/widgets.dart";
 import "package:quilby/theme/colors.dart";
 
 class AppTextStyles {
-  static final TextStyle title = GoogleFonts.libreBodoni(
+  static final TextStyle title = GoogleFonts.fraunces(
     fontSize: 32,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.italic,
+    color: AppColors.primary,
+  );
+
+  static final TextStyle heading1 = GoogleFonts.commissioner(
+    fontSize: 28,
+    fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
 

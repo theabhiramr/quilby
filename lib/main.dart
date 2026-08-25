@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.background,
       ),
       home: RootShell(),
+      routes: {"/auth": (context) => const AuthScreen()},
     );
   }
 }

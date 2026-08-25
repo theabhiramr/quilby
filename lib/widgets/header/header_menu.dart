@@ -3,7 +3,7 @@ import 'package:picons/picons.dart';
 import 'package:flutter/material.dart';
 
 import 'package:quilby/theme/theme.dart';
-import 'package:quilby/widgets/header_icon_button.dart';
+import 'package:quilby/widgets/header/header_icon_button.dart';
 
 class HeaderMenu extends StatelessWidget {
   const HeaderMenu({super.key});

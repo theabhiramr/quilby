@@ -19,6 +19,7 @@ class _RootShellState extends State<RootShell> {
     SearchScreen(),
     LibraryScreen(),
     ProfileScreen(),
+    AuthScreen(),
   ];
 
   static const List<NavBarItem> _items = [
@@ -34,7 +35,8 @@ class _RootShellState extends State<RootShell> {
       body: IndexedStack(index: _selectedIndex, children: _screens),
       bottomNavigationBar: AppBottomNavBar(
         selectedIndex: _selectedIndex,
-        onDestinationSelected: (index) => setState(() => _selectedIndex = index),
+        onDestinationSelected: (index) =>
+            setState(() => _selectedIndex = index),
         items: _items,
         onAddPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
