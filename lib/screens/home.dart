@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:quilby/widgets/header.dart";
+import "package:quilby/widgets/widgets.dart";
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: const Header(
         title: "quilby",
-        actions: [],
+        actions: [NotificationsAction()],
         backgroundColor: Colors.transparent,
       ),
       body: const Center(child: Text("Welcome to Quilby!")),

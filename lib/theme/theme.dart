@@ -1,2 +1,2 @@
-export 'package:quilby/theme/app_colors.dart';
-export 'package:quilby/theme/app_text_styles.dart';
+export 'package:quilby/theme/colors.dart';
+export 'package:quilby/theme/text_styles.dart';

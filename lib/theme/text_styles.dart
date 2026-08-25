@@ -2,7 +2,7 @@ import "package:google_fonts/google_fonts.dart";
 
 import "package:flutter/widgets.dart";
 
-import "package:quilby/theme/app_colors.dart";
+import "package:quilby/theme/colors.dart";
 
 class AppTextStyles {
   static final TextStyle heading1 = GoogleFonts.libreBodoni(
