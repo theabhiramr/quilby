@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: AppColors.background,
       ),
-      home: Home(),
+      home: RootShell(),
     );
   }
 }
