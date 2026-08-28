@@ -9,14 +9,21 @@ class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(
-        title: "Your Library",
-        centerTitle: false,
-        actions: const [],
-        backgroundColor: Colors.transparent,
-      ),
-      body: Center(
-        child: Text("Your library is empty", style: AppTextStyles.body1),
+      body: CustomScrollView(
+        slivers: [
+          Header(
+            title: "Your Library",
+            centerTitle: false,
+            actions: const [],
+            backgroundColor: Colors.transparent,
+          ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Center(
+              child: Text("Your library is empty", style: AppTextStyles.body1),
+            ),
+          ),
+        ],
       ),
     );
   }

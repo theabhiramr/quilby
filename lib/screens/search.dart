@@ -9,14 +9,21 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(
-        title: "Search",
-        centerTitle: false,
-        actions: const [],
-        backgroundColor: Colors.transparent,
-      ),
-      body: Center(
-        child: Text("Search coming soon", style: AppTextStyles.body1),
+      body: CustomScrollView(
+        slivers: [
+          Header(
+            title: "Search",
+            centerTitle: false,
+            actions: const [],
+            backgroundColor: Colors.transparent,
+          ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Center(
+              child: Text("Search coming soon", style: AppTextStyles.body1),
+            ),
+          ),
+        ],
       ),
     );
   }

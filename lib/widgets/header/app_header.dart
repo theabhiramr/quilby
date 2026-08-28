@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:quilby/theme/colors.dart';
 import 'package:quilby/theme/text_styles.dart';
 
-class Header extends StatelessWidget implements PreferredSizeWidget {
+class Header extends StatelessWidget {
   final String title;
   final List<Widget> actions;
   final Widget? leading;
@@ -23,9 +23,6 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   });
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-  @override
   Widget build(BuildContext context) {
     final Color effectiveBackground =
         backgroundColor ?? Theme.of(context).colorScheme.primary;
@@ -39,7 +36,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         ? AppColors.onPrimary
         : AppColors.textPrimary;
 
-    return AppBar(
+    return SliverAppBar(
       title: Padding(
         padding: const EdgeInsets.only(bottom: 6),
         child: Text(
@@ -49,12 +46,19 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      leading: leading == null ? null : Center(child: leading),
+      leading: leading == null
+          ? null
+          : Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Center(child: leading),
+            ),
       centerTitle: centerTitle,
       backgroundColor: effectiveBackground,
-      actions: actions,
+      actions: [
+        for (final action in actions)
+          Padding(padding: const EdgeInsets.only(bottom: 6), child: action),
+      ],
       elevation: 3,
-      scrolledUnderElevation: 3,
       shadowColor: AppColors.shadow,
       // A transparent bar shows the light scaffold background behind it, and an
       // opaque bar here is never dark — so status bar icons should stay dark too.
@@ -63,6 +67,11 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
       systemOverlayStyle: isDarkBackground
           ? SystemUiOverlayStyle.light
           : SystemUiOverlayStyle.dark,
+      // Instagram-style header: slides away as you scroll down, and slides
+      // back in as soon as you scroll up, without needing to reach the top.
+      floating: true,
+      snap: true,
+      pinned: false,
     );
   }
 }

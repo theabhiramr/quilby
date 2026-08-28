@@ -9,14 +9,24 @@ class AddReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(
-        title: "Add Review",
-        centerTitle: false,
-        actions: const [],
-        backgroundColor: Colors.transparent,
-      ),
-      body: Center(
-        child: Text("Book review form coming soon", style: AppTextStyles.body1),
+      body: CustomScrollView(
+        slivers: [
+          Header(
+            title: "Add Review",
+            centerTitle: false,
+            actions: const [],
+            backgroundColor: Colors.transparent,
+          ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Center(
+              child: Text(
+                "Book review form coming soon",
+                style: AppTextStyles.body1,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

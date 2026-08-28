@@ -8,20 +8,27 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Header(
-        title: "quilby",
-        titleStyle: AppTextStyles.title,
-        leading: HeaderMenu(),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: HeaderNotifications(),
+      body: CustomScrollView(
+        slivers: [
+          Header(
+            title: "quilby",
+            titleStyle: AppTextStyles.title,
+            leading: HeaderMenu(),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: HeaderNotifications(),
+              ),
+            ],
+            backgroundColor: AppColors.surface,
+          ),
+          SliverList.builder(
+            itemCount: 40,
+            itemBuilder: (context, index) => ListTile(
+              title: Text("TEMP TEST ITEM $index", style: AppTextStyles.body1),
+            ),
           ),
         ],
-        backgroundColor: Colors.transparent,
-      ),
-      body: Center(
-        child: Text("Welcome to Quilby!", style: AppTextStyles.body1),
       ),
     );
   }

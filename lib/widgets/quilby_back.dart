@@ -1,5 +1,3 @@
-import 'quilby_button.dart';
-
 import 'package:flutter/material.dart';
 
 class QuilbyBack extends StatelessWidget {
@@ -9,9 +7,9 @@ class QuilbyBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return QuilbyButton(
+    return IconButton(
       onPressed: onPressed ?? () => Navigator.of(context).pop(),
-      child: const Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 }

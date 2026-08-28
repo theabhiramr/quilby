@@ -12,15 +12,19 @@ class AppColors {
 
   // Neutrals — warm off-white paper tones instead of stark white/grey.
   static const Color background = Color(0xFFFDF8F0);
+  static const Color backgroundDark = Color(0xFF1C1611);
   static const Color surface = Color(0xFFFFFCF5);
+  static const Color surfaceDark = Color(0xFF2B2118);
   static const Color onSurfaceMuted = Color(0xFF6F6459);
   static const Color shadow = Color(0x1A2B2118);
 
   static const Color textPrimary = Color(0xFF2B2118);
   static const Color textSecondary = Color(0xFF5C4033);
+  static const Color textPrimaryDark = Color(0xFFFDF8F0);
 
   static const Color error = Color(0xFFB3261E);
 
   static const Color onPrimary = Color(0xFFFFFFFF);
   static const Color onSecondary = Color(0xFFFFFFFF);
+  static const Color onSurfaceDark = Color(0xFFFFFFFF);
 }
