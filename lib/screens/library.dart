@@ -20,7 +20,10 @@ class LibraryScreen extends StatelessWidget {
           SliverFillRemaining(
             hasScrollBody: false,
             child: Center(
-              child: Text("Your library is empty", style: AppTextStyles.body1),
+              child: Text(
+                "Your library is empty",
+                style: AppTextStyles.body1(context),
+              ),
             ),
           ),
         ],

@@ -41,7 +41,7 @@ class Header extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 6),
         child: Text(
           title,
-          style: (titleStyle ?? AppTextStyles.heading2).copyWith(
+          style: (titleStyle ?? AppTextStyles.heading2(context)).copyWith(
             color: titleColor,
           ),
         ),

@@ -19,7 +19,7 @@ class HeaderIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppColors.surface,
+      color: Theme.of(context).colorScheme.surface,
       shape: const CircleBorder(),
       elevation: elevation,
       shadowColor: AppColors.shadow,

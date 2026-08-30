@@ -50,7 +50,7 @@ class AppBottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Material(
-            color: AppColors.surface,
+            color: Theme.of(context).colorScheme.surface,
             shadowColor: AppColors.shadow,
             elevation: _barElevation,
             shape: const StadiumBorder(),

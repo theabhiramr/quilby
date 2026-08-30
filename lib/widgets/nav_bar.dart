@@ -22,7 +22,8 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final effectiveBackground = backgroundColor ?? AppColors.background;
+    final effectiveBackground =
+        backgroundColor ?? Theme.of(context).scaffoldBackgroundColor;
     final titleColor =
         ThemeData.estimateBrightnessForColor(effectiveBackground) ==
             Brightness.dark

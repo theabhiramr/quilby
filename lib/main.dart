@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Quilby',
+      themeMode: ThemeMode.system,
       theme: ThemeData(
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
@@ -39,7 +40,21 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: AppColors.background,
       ),
-      home: RootShell(),
+      darkTheme: ThemeData(
+        colorScheme: const ColorScheme(
+          brightness: Brightness.dark,
+          primary: AppColors.primary,
+          onPrimary: AppColors.onPrimary,
+          secondary: AppColors.secondary,
+          onSecondary: AppColors.onSecondary,
+          error: AppColors.error,
+          onError: AppColors.onPrimary,
+          surface: AppColors.surfaceDark,
+          onSurface: AppColors.textPrimaryDark,
+        ),
+        scaffoldBackgroundColor: AppColors.backgroundDark,
+      ),
+      home: const AuthGate(),
       routes: {"/auth": (context) => const AuthScreen()},
     );
   }

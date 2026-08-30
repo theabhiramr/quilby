@@ -20,7 +20,10 @@ class SearchScreen extends StatelessWidget {
           SliverFillRemaining(
             hasScrollBody: false,
             child: Center(
-              child: Text("Search coming soon", style: AppTextStyles.body1),
+              child: Text(
+                "Search coming soon",
+                style: AppTextStyles.body1(context),
+              ),
             ),
           ),
         ],

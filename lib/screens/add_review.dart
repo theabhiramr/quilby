@@ -22,7 +22,7 @@ class AddReviewScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 "Book review form coming soon",
-                style: AppTextStyles.body1,
+                style: AppTextStyles.body1(context),
               ),
             ),
           ),

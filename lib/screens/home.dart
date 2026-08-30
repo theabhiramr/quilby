@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         slivers: [
           Header(
             title: "quilby",
-            titleStyle: AppTextStyles.title,
+            titleStyle: AppTextStyles.title(context),
             leading: HeaderMenu(),
             actions: [
               Padding(
@@ -20,12 +20,15 @@ class Home extends StatelessWidget {
                 child: HeaderNotifications(),
               ),
             ],
-            backgroundColor: AppColors.surface,
+            backgroundColor: Theme.of(context).colorScheme.surface,
           ),
           SliverList.builder(
             itemCount: 40,
             itemBuilder: (context, index) => ListTile(
-              title: Text("TEMP TEST ITEM $index", style: AppTextStyles.body1),
+              title: Text(
+                "TEMP TEST ITEM $index",
+                style: AppTextStyles.body1(context),
+              ),
             ),
           ),
         ],

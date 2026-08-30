@@ -26,25 +26,18 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Column(
-                    children: [
-                      QuilbyButton(
-                        text: "Sign in/Sign up",
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/auth");
-                        },
-                      ),
-                      Text(
-                        user?.email ?? "Not signed in",
-                        style: AppTextStyles.body1,
-                      ),
-                    ],
+                  Text(
+                    user?.email ?? "Not signed in",
+                    style: AppTextStyles.body1(context),
                   ),
                   if (user != null) ...[
                     const SizedBox(height: 16),
                     TextButton(
                       onPressed: () => AuthService().signOut(),
-                      child: Text("Sign out", style: AppTextStyles.body2),
+                      child: Text(
+                        "Sign out",
+                        style: AppTextStyles.body2(context),
+                      ),
                     ),
                   ],
                 ],

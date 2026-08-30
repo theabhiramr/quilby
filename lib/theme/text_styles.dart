@@ -1,44 +1,51 @@
 import "package:google_fonts/google_fonts.dart";
 
-import "package:flutter/widgets.dart";
+import "package:flutter/material.dart";
 
 import "package:quilby/theme/colors.dart";
 
 class AppTextStyles {
-  static final TextStyle title = GoogleFonts.fraunces(
+  static bool _isDark(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark;
+
+  static TextStyle title(BuildContext context) => GoogleFonts.fraunces(
     fontSize: 32,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.italic,
-    color: AppColors.primary,
+    color: _isDark(context) ? AppColors.secondaryLight : AppColors.primary,
   );
 
-  static final TextStyle heading1 = GoogleFonts.commissioner(
+  static TextStyle heading1(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 28,
     fontWeight: FontWeight.w600,
-    color: AppColors.primary,
+    color: _isDark(context) ? AppColors.secondaryLight : AppColors.primary,
   );
 
-  static final TextStyle heading2 = GoogleFonts.commissioner(
+  static TextStyle heading2(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 24,
     fontWeight: FontWeight.w600,
-    color: AppColors.primary,
+    color: _isDark(context) ? AppColors.secondaryLight : AppColors.primary,
   );
 
-  static final TextStyle heading3 = GoogleFonts.commissioner(
+  static TextStyle heading3(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    color: AppColors.primary,
+    color: _isDark(context) ? AppColors.secondaryLight : AppColors.primary,
   );
 
-  static final TextStyle body1 = GoogleFonts.commissioner(
+  static TextStyle body1(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    color: AppColors.textPrimary,
+    color: _isDark(context)
+        ? AppColors.textPrimaryDark
+        : AppColors.textPrimary,
   );
 
-  static final TextStyle body2 = GoogleFonts.commissioner(
+  static TextStyle body2(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
+    color: _isDark(context)
+        ? AppColors.textSecondaryDark
+        : AppColors.textSecondary,
   );
 }
