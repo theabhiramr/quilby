@@ -9,9 +9,10 @@ class AppTextStyles {
       Theme.of(context).brightness == Brightness.dark;
 
   static TextStyle title(BuildContext context) => GoogleFonts.fraunces(
-    fontSize: 32,
+    fontSize: 48,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.italic,
+    letterSpacing: 1.8,
     color: _isDark(context) ? AppColors.secondaryLight : AppColors.primary,
   );
 
@@ -36,9 +37,7 @@ class AppTextStyles {
   static TextStyle body1(BuildContext context) => GoogleFonts.commissioner(
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    color: _isDark(context)
-        ? AppColors.textPrimaryDark
-        : AppColors.textPrimary,
+    color: _isDark(context) ? AppColors.textPrimaryDark : AppColors.textPrimary,
   );
 
   static TextStyle body2(BuildContext context) => GoogleFonts.commissioner(

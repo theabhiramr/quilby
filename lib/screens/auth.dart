@@ -1,13 +1,17 @@
+import 'package:picons/picons.dart';
+
 import 'package:flutter/material.dart';
 
-import 'package:quilby/theme/theme.dart';
 import 'package:quilby/widgets/widgets.dart';
+import 'package:quilby/theme/theme.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilder(
@@ -16,16 +20,22 @@ class AuthScreen extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 40),
-                      child: Text(
-                        "quilby",
-                        style: AppTextStyles.title(context).copyWith(
-                          fontSize: 48,
-                          letterSpacing: 1.2,
-                        ),
+                      padding: const EdgeInsets.only(top: 48, bottom: 32),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            isDarkMode
+                                ? "assets/images/quilby_logo_dark.png"
+                                : "assets/images/quilby_logo.png",
+                            width: 180,
+                            height: 180,
+                          ),
+                          const SizedBox(height: 8),
+                          Text("quilby", style: AppTextStyles.title(context)),
+                        ],
                       ),
                     ),
                     Center(
@@ -36,14 +46,14 @@ class AuthScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               AuthInput(
+                                icon: Picons.user,
                                 label: "Email",
-                                hintText: "Enter your email",
                                 controller: TextEditingController(),
                               ),
                               const SizedBox(height: 20),
                               AuthInput(
+                                icon: Picons.lock,
                                 label: "Password",
-                                hintText: "Enter your password",
                                 obscureText: true,
                                 controller: TextEditingController(),
                               ),

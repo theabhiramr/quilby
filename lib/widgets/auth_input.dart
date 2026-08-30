@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:quilby/theme/theme.dart';
 
 class AuthInput extends StatelessWidget {
+  final IconData icon;
   final String label;
-  final String hintText;
   final bool obscureText;
   final TextEditingController controller;
 
   const AuthInput({
     super.key,
+    required this.icon,
     required this.label,
-    required this.hintText,
     this.obscureText = false,
     required this.controller,
   });
@@ -21,7 +21,6 @@ class AuthInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: AppTextStyles.heading3(context)),
         const SizedBox(height: 8),
         Material(
           shape: const StadiumBorder(),
@@ -32,7 +31,8 @@ class AuthInput extends StatelessWidget {
             controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
-              hintText: hintText,
+              icon: Icon(icon),
+              hintText: label,
               enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(999)),
                 borderSide: BorderSide.none,
