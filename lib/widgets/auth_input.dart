@@ -24,14 +24,21 @@ class AuthInput extends StatelessWidget {
         const SizedBox(height: 8),
         Material(
           shape: const StadiumBorder(),
-          color: Theme.of(context).colorScheme.surface,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? AppColors.inputFillDark
+              : AppColors.inputFill,
           elevation: 3,
           shadowColor: AppColors.shadow,
           child: TextField(
             controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
-              icon: Icon(icon),
+              prefixIcon: Icon(icon),
+              prefixIconColor: WidgetStateColor.resolveWith(
+                (states) => states.contains(WidgetState.focused)
+                    ? AppColors.primary
+                    : AppColors.onSurfaceMuted,
+              ),
               hintText: label,
               enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(999)),

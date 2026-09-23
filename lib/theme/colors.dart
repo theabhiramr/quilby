@@ -15,6 +15,10 @@ class AppColors {
   static const Color backgroundDark = Color(0xFF1C1611);
   static const Color surface = Color(0xFFEEE1C9);
   static const Color surfaceDark = Color(0xFF2B2118);
+
+  // Lighter fill for input fields — sits between background and surface.
+  static const Color inputFill = Color(0xFFF7F1E3);
+  static const Color inputFillDark = Color(0xFF362A1F);
   static const Color onSurfaceMuted = Color(0xFF6F6459);
   static const Color shadow = Color(0x1A2B2118);
 
